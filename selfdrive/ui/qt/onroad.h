@@ -41,6 +41,7 @@ private:
   bool dmActive = false;
   bool hideDM = false;
   int status = STATUS_DISENGAGED;
+  double strType = 0;
 
 signals:
   void valueChanged();

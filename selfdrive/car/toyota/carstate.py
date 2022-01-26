@@ -114,6 +114,8 @@ class CarState(CarStateBase):
       ret.steeringAngleDeg = self.stock_steer_value
       self.steertype = 1
 
+    ret.steerType = self.steertype
+
     if (self.count % int(1.0 / DT_CTRL)) == 0:
       cloudlog.info("*** Zorro       *** %s" % self.zorro_steer_value)
       cloudlog.info("*** Torque      *** %s" % self.torque_steer_value)
@@ -293,4 +295,3 @@ class CarState(CarStateBase):
       checks.append(("ACC_CONTROL", 33))
 
     return CANParser(DBC[CP.carFingerprint]["pt"], signals, checks, 2)
-
